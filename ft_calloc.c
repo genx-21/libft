@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-void *ft_calloc(size_t narr, size_t size)
+void	*ft_calloc(size_t narr, size_t size)
 {
-    size_t totalz;
-    void *array;
+	size_t	totalz;
+	void	*array;
 
-    if (!narr || !size)
-        return (malloc(0));
-    totalz = (narr * size);
-    if (totalz / narr != size)
-        return (NULL);
-    array = malloc(totalz);
-    if (array == NULL)
-        return (NULL);
-    ft_bzero(array, totalz);
-    return (array);
+	if (!narr || !size)
+		return (malloc(0));
+	totalz = (narr * size);
+	if (totalz / narr != size)
+		return (NULL);
+	array = malloc(totalz);
+	if (array == NULL)
+		return (NULL);
+	ft_bzero(array, totalz);
+	return (array);
 }

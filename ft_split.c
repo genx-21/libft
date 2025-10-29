@@ -14,21 +14,21 @@
 
 static char	*datacpy(const char *s, int start, int end)
 {
-	int	i;
-    char *arr;
-    
+	int		i;
+	char	*arr;
+
 	i = 0;
 	arr = malloc(sizeof(char) * (end - start + 2));
 	if (!arr)
 		return (NULL);
 	while (start <= end && s[start])
-    {
+	{
 		arr[i] = s[start];
-        i++;
-        start++;
-    }
+		i++;
+		start++;
+	}
 	arr[i] = '\0';
-    return (arr);
+	return (arr);
 }
 
 void	free_data(char **arr)
@@ -46,33 +46,33 @@ void	free_data(char **arr)
 	free(arr);
 }
 
-static char	**check_w_and_tocopy(const char *s, char c,int *row,char **arr)
+static char	**check_w_and_tocopy(const char *s, char c, int *row, char **arr)
 {
 	int	i;
-	int		start;
-	int		end;
-    
-    i = 0;
-    while (s[i])
-        {
-            while (s[i] && s[i] == c)
-                i++;
-            start = i;
-            while (s[i] && s[i] != c)
-                i++;
-            end = i - 1;
-            if (end >= start)
-            {
-                arr[*row] = datacpy(s, start, end);
-                if (!arr[*row])
-                {
-                    free_data(arr);
-                    return ( NULL);
-                }
-            (*row)++;
-            }
-        }
-    return (arr);
+	int	start;
+	int	end;
+
+	i = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		start = i;
+		while (s[i] && s[i] != c)
+			i++;
+		end = i - 1;
+		if (end >= start)
+		{
+			arr[*row] = datacpy(s, start, end);
+			if (!arr[*row])
+			{
+				free_data(arr);
+				return (NULL);
+			}
+			(*row)++;
+		}
+	}
+	return (arr);
 }
 
 static int	countw(const char *s, char c)
@@ -100,15 +100,15 @@ char	**ft_split(char const *s, char c)
 {
 	int		row;
 	char	**arr;
-    
-    if (!s)
-        return (NULL);
+
+	if (!s)
+		return (NULL);
 	arr = malloc(sizeof(char *) * (countw(s, c) + 1));
 	if (!arr)
 		return (NULL);
-    row = 0;
-    if (!check_w_and_tocopy(s, c, &row, arr))
-        return (NULL);
-    arr[row] = NULL;
+	row = 0;
+	if (!check_w_and_tocopy(s, c, &row, arr))
+		return (NULL);
+	arr[row] = NULL;
 	return (arr);
 }
