@@ -6,7 +6,7 @@
 /*   By: sasaidi <sasaidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 12:25:15 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/10/26 16:15:40 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/10/29 21:51:38 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const unsigned char	*ss;
 	size_t				j;
 
-	if (!dest || !src)
-		return (NULL);
 	dd = (unsigned char *)dest;
 	ss = (const unsigned char *)src;
 	j = 0;

@@ -6,13 +6,13 @@
 /*   By: sasaidi <sasaidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:45:53 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/10/20 13:58:50 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/10/29 15:28:45 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int asc)
 {
-	if (!(asc >= 97 && asc <= 122) || (asc >= 65 && asc <= 90))
-		return (0);
-	return (1);
+	if ((asc >= 97 && asc <= 122) || (asc >= 65 && asc <= 90))
+		return (1);
+	return (0);
 }
