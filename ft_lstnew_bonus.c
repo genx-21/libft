@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasaidi <sasaidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 02:20:10 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/01 02:28:59 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/04 23:02:37 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-typedef struct t_list
-{
-    void    *data;
-    struct t_list *next;
-}t_list;
 
 t_list *ft_lstnew(void *content)
 {

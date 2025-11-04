@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasaidi <sasaidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 04:42:49 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/01 05:10:00 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/04 23:02:04 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-
-void del(void *data)
-{
-    free(data);
-}
+#include "libft.h"
 
 void ft_lstclear(t_list **lst, void (*del)(void *))
 {
@@ -26,7 +21,8 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
     while (*lst)
     {
         start = (*lst)->next;
-        del((*lst)->data);
+        if (del)
+            del((*lst)->data);
         free (*lst);
         *lst = start;
     }
