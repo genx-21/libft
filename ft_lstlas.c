@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstlas.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasaidi <sasaidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 15:36:33 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/10/20 15:48:44 by sasaidi          ###   ########.fr       */
+/*   Created: 2025/11/01 03:21:50 by sasaidi           #+#    #+#             */
+/*   Updated: 2025/11/01 03:36:13 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list *ft_lstlast(t_list *lst)
 {
-	int	i;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	while (s[i])
-		i++;
-	while (i >= 0)
-	{
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((char *)&s[i]);
-		i--;
-	}
-	return (NULL);
+    if (!lst)
+        return (NULL);
+    t_list *last;
+    last = lst;
+    while (last->next != NULL)
+        last = last->next;
+    return (last);
 }
