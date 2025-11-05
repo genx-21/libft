@@ -6,7 +6,7 @@
 /*   By: sasaidi <sasaidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:24:52 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/10/21 18:45:35 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/05 11:19:38 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	i = 0;
 	lnsrc = ft_strlen(src);
-	while ((i < size - 1) && src[i])
+	if (size == 0)
+		return (lnsrc);
+	while (src[i] && (i < size - 1))
 	{
 		dst[i] = src[i];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: sasaidi <sasaidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:41:49 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/10/27 22:28:17 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/05 00:25:16 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ static char	*datacpy(const char *s, int start, int end)
 	return (arr);
 }
 
-void	free_data(char **arr)
+void	free_data(char ***arr)
 {
 	int	i;
 
 	i = 0;
-	if (!arr)
+	if (!(*arr))
 		return ;
-	while (arr[i])
+	while ((*arr)[i])
 	{
-		free(arr[i]);
+		free((*arr)[i]);
 		i++;
 	}
-	free(arr);
+	free(*arr);
 }
 
 static char	**check_w_and_tocopy(const char *s, char c, int *row, char **arr)
@@ -66,7 +66,7 @@ static char	**check_w_and_tocopy(const char *s, char c, int *row, char **arr)
 			arr[*row] = datacpy(s, start, end);
 			if (!arr[*row])
 			{
-				free_data(arr);
+				free_data(&arr);
 				return (NULL);
 			}
 			(*row)++;
