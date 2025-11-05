@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sasaidi <sasaidi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 17:32:52 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/10/24 09:56:48 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/05 16:12:48 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	check(char c, const char *set)
 {

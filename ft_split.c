@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sasaidi <sasaidi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:41:49 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/05 00:25:16 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/05 16:01:47 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	free_data(char ***arr)
 	free(*arr);
 }
 
-static char	**check_w_and_tocopy(const char *s, char c, int *row, char **arr)
+static char	**check_w_and_tocopy(const char *s, char sep, int *row, char **arr)
 {
 	int	i;
 	int	start;
@@ -55,10 +55,10 @@ static char	**check_w_and_tocopy(const char *s, char c, int *row, char **arr)
 	i = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
+		while (s[i] && s[i] == sep)
 			i++;
 		start = i;
-		while (s[i] && s[i] != c)
+		while (s[i] && s[i] != sep)
 			i++;
 		end = i - 1;
 		if (end >= start)

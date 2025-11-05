@@ -1,5 +1,8 @@
 NAME = libft.a
-
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+AR =  ar rcs 
+RM = rm -rf
 SRC = ft_atoi.c ft_isprint.c ft_putchar_fd.c ft_striteri.c ft_strnstr.c \
       ft_bzero.c ft_itoa.c ft_putendl_fd.c ft_strjoin.c ft_strrchr.c \
       ft_calloc.c ft_memchr.c ft_putnbr_fd.c ft_strlcat.c ft_strtrim.c \
@@ -10,30 +13,24 @@ SRC = ft_atoi.c ft_isprint.c ft_putchar_fd.c ft_striteri.c ft_strnstr.c \
 
 OBJ = $(SRC:.c=.o)
 
-SRC_BONUS = ft_lstadd_back.c   ft_lstdelone.c  ft_lstmap.c \
-	ft_lstadd_front.c  ft_lstiter.c    ft_lstnew.c \
-	ft_lstclear.c      ft_lstlast.c     ft_lstsize.c 
+SRC_BONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c \
+			ft_lstlast_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
+
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
-
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	$(AR) $(NAME) $(OBJ)
 
 bonus: 	$(OBJ) $(OBJ_BONUS)
-	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
-
-%.o:%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
 
 clean:
-	rm -rf $(OBJ) $(OBJ_BONUS)
+	$(RM) $(OBJ) $(OBJ_BONUS)
 fclean: clean
-	rm -rf $(NAME) $(NAME)
+	$(RM) $(NAME) $(NAME)
 re: fclean all
 
 .PHONY: all bonus clean fclean re

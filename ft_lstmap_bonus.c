@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 10:26:35 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/05 15:54:10 by sasaidi          ###   ########.fr       */
+/*   Created: 2025/11/03 23:32:39 by sasaidi           #+#    #+#             */
+/*   Updated: 2025/11/05 15:44:48 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned char		*ddest;
-	const unsigned char	*ssrc;
-	size_t				j;
+	t_list	*new_lst;
+	t_list	*new_node;
+	void	*n_content;
 
-	j = 0;
-	ddest = (unsigned char *)dest;
-	ssrc = (unsigned char *)src;
-	if (ddest < ssrc)
+	new_lst = NULL;
+	while (lst)
 	{
-		while (j < n)
+		n_content = f(lst->content);
+		if (!n_content)
 		{
-			ddest[j] = ssrc[j];
-			j++;
+			ft_lstclear(&new_lst, del);
+			return (NULL);
 		}
-	}
-	else if (ddest > ssrc)
-	{
-		while (n > 0)
+		new_node = ft_lstnew(n_content);
+		if (!new_node)
 		{
-			n--;
-			ddest[n] = ssrc[n];
+			del(n_content);
+			ft_lstclear(&new_lst, del);
+			return (NULL);
 		}
+		ft_lstadd_back(&new_lst, new_node);
+		lst = lst->next;
 	}
-	return (dest);
+	return (new_lst);
 }
