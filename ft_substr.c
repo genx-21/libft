@@ -6,13 +6,13 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 21:20:29 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/05 16:16:10 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/08 12:24:06 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*cpyx(char *dest, const char *src, size_t start, size_t len)
+static void	*cpyx(char *dest, const char *src, size_t start, size_t len)
 {
 	size_t	i;
 
@@ -34,7 +34,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	len_s = ft_strlen(s);
 	if ((len_s == 0) || (start >= len_s))
 	{
-		ft_strdup("");
+		return (ft_strdup(""));
 	}
 	arr = malloc(sizeof(char) * (len + 1));
 	if (!arr)

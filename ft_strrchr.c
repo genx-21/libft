@@ -6,7 +6,7 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:36:33 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/05 16:12:14 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/08 12:18:36 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	if (!s)
-		return (NULL);
 	while (s[i])
 		i++;
 	while (i >= 0)

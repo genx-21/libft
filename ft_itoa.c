@@ -6,13 +6,13 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:42:16 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/05 15:36:53 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/08 13:06:02 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	countnb(int n)
+static int	countnb(int n)
 {
 	int	len;
 
@@ -30,7 +30,7 @@ int	countnb(int n)
 	return (len);
 }
 
-void	nbset(char *number, int n, int len)
+static void	nbset(char *number, int n, int len)
 {
 	int	end;
 

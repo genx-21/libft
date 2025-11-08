@@ -6,15 +6,15 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 13:55:38 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/05 15:36:26 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/08 10:22:04 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int asc)
+int	ft_isprint(int c)
 {
-	if (asc >= 32 && asc <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

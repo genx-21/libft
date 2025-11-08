@@ -6,13 +6,13 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:34:44 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/05 15:36:14 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/08 10:17:06 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int asc)
+int	ft_isdigit(int c)
 {
-	if (asc >= 48 && asc <= 57)
+	if (c >= 48 && c <= 57)
 		return (1);
 	return (0);
 }

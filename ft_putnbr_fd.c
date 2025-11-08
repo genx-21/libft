@@ -6,13 +6,13 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:47:00 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/05 15:55:09 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/08 14:51:04 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	negativ(int fd, int n)
+static int	negativ(int fd, int n)
 {
 	if (n == 0)
 	{

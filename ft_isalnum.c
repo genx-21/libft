@@ -6,14 +6,14 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 16:34:07 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/05 15:35:03 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/08 10:17:48 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int asc)
+int	ft_isalnum(int c)
 {
-	if ((asc >= 97 && asc <= 122) || (asc >= 65 && asc <= 90) || (asc >= 48
-			&& asc <= 57))
+	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90) || (c >= 48
+			&& c <= 57))
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:41:49 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/05 16:01:47 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/08 12:10:04 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static char	*datacpy(const char *s, int start, int end)
 	return (arr);
 }
 
-void	free_data(char ***arr)
+static void	free_data(char ***arr)
 {
 	int	i;
 
